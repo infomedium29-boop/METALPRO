@@ -1,0 +1,3535 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MetalPro Konstrukcije | Bravarija i metalni elementi po mjeri</title>
+<meta name="description" content="Profesionalna bravarija, izrada metalnih ograda, kapija, stepeništa, nadstrešnica i metalnih konstrukcija po mjeri za privatne, poslovne i industrijske klijente.">
+<meta name="keywords" content="bravarija Hrvatska, bravarija Osijek, izrada metalnih ograda, metalne ograde po mjeri, metalne konstrukcije, čelične konstrukcije, izrada kapija">
+<meta property="og:title" content="MetalPro Konstrukcije | Bravarija i metalni elementi po mjeri">
+<meta property="og:description" content="Profesionalna bravarija i izrada metalnih elemenata po mjeri u Osijeku.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0a0a0a;
+  --dark: #111111;
+  --dark-2: #181818;
+  --dark-3: #222222;
+  --anthracite: #2a2a2a;
+  --mid: #3d3d3d;
+  --metal: #6b7280;
+  --metal-light: #9ca3af;
+  --light-gray: #e5e7eb;
+  --off-white: #f5f4f2;
+  --white: #ffffff;
+  --orange: #e8540a;
+  --orange-light: #ff6b1a;
+  --orange-dark: #c44309;
+  --copper: #b87333;
+  --steel: #8090a0;
+  
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+  
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.5);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 3px; }
+
+/* ─── PAGES ─── */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ─── HEADER / NAV ─── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(10,10,10,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(232,84,10,0.2);
+  transition: var(--transition);
+}
+
+.header-inner {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  background: var(--orange);
+  clip-path: polygon(0 20%, 20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-icon svg { width: 22px; height: 22px; fill: white; }
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: 0.03em;
+  color: var(--white);
+}
+
+.logo-tagline {
+  font-size: 0.65rem;
+  color: var(--metal);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--metal-light);
+  padding: 0.5rem 0.75rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  border: none;
+  background: none;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--white);
+  background: rgba(232,84,10,0.1);
+}
+
+.nav-cta {
+  background: var(--orange);
+  color: var(--white) !important;
+  padding: 0.55rem 1.25rem !important;
+  font-weight: 600 !important;
+  margin-left: 0.5rem;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+.nav-cta:hover {
+  background: var(--orange-light) !important;
+  background-color: var(--orange-light) !important;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: var(--transition);
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 72px; left: 0; right: 0; bottom: 0;
+  background: var(--black);
+  z-index: 999;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 0.5rem;
+  overflow-y: auto;
+}
+
+.mobile-menu.open { display: flex; }
+.mobile-menu .nav-link {
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--dark-3);
+  border-radius: 0;
+  display: block;
+  width: 100%;
+}
+
+/* ─── SECTIONS COMMON ─── */
+section { position: relative; }
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 3rem);
+}
+
+.section-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: var(--orange);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.section-title span { color: var(--orange); }
+
+.section-subtitle {
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  color: var(--metal-light);
+  max-width: 100%;
+  margin-top: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ─── BUTTONS ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: var(--white);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+.btn-primary:hover {
+  background: var(--orange-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(232,84,10,0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+.btn-outline:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  transform: translateY(-2px);
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s;
+}
+
+.btn:hover svg { transform: translateX(3px); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding-top: 72px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 70% 50%, rgba(232,84,10,0.08) 0%, transparent 60%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 59px,
+      rgba(255,255,255,0.02) 59px,
+      rgba(255,255,255,0.02) 60px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 59px,
+      rgba(255,255,255,0.02) 59px,
+      rgba(255,255,255,0.02) 60px
+    );
+}
+
+.hero-texture {
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.hero-visual {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 48%;
+  overflow: hidden;
+}
+
+.hero-visual-inner {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, var(--black) 0%, transparent 30%),
+    linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, transparent 20%);
+  z-index: 2;
+}
+
+.hero-img-placeholder {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 40%, #1a1a1a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* SVG industrial illustration replacing placeholder */
+.hero-illustration {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: clamp(280px, 55%, 700px);
+  padding: clamp(2rem, 4vw, 4rem) 0;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(232,84,10,0.12);
+  border: 1px solid rgba(232,84,10,0.3);
+  padding: 0.4rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 2rem;
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title .accent { color: var(--orange); }
+.hero-title .outline {
+  -webkit-text-stroke: 2px var(--white);
+  color: transparent;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--metal-light);
+  max-width: 100%;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: 0.78rem;
+  color: var(--metal);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+/* ─── ADVANTAGES STRIP ─── */
+.advantages {
+  background: var(--dark-2);
+  border-top: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding: 1.25rem 0;
+}
+
+.advantages-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  flex-wrap: wrap;
+}
+
+.adv-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 160px;
+}
+
+.adv-icon {
+  width: 38px;
+  height: 38px;
+  background: rgba(232,84,10,0.1);
+  border: 1px solid rgba(232,84,10,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+
+.adv-icon svg { width: 18px; height: 18px; stroke: var(--orange); fill: none; stroke-width: 1.5; }
+
+.adv-text {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--light-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+}
+
+.adv-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+
+/* ─── WHAT WE MAKE ─── */
+.services-grid-home {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  gap: 1px;
+  background: rgba(255,255,255,0.05);
+  margin-top: 3rem;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.service-card-home {
+  background: var(--dark-2);
+  padding: clamp(1.5rem, 2.5vw, 2.5rem);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card-home::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transition: var(--transition);
+  transform-origin: left;
+}
+
+.service-card-home:hover {
+  background: var(--dark-3);
+}
+
+.service-card-home:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(232,84,10,0.08);
+  border: 1px solid rgba(232,84,10,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  transition: var(--transition);
+}
+
+.service-card-home:hover .service-card-icon {
+  background: rgba(232,84,10,0.2);
+  border-color: var(--orange);
+}
+
+.service-card-icon svg { width: 26px; height: 26px; stroke: var(--orange); fill: none; stroke-width: 1.5; }
+
+.service-card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+
+.service-card-desc {
+  font-size: 0.88rem;
+  color: var(--metal);
+  line-height: 1.65;
+}
+
+.service-num {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.75rem;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.03);
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ─── CUSTOM SOLUTIONS ─── */
+.solutions {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.solutions::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, transparent, var(--orange), transparent);
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.solutions-visual {
+  position: relative;
+}
+
+.solutions-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.solutions-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: -1.5rem;
+  background: var(--orange);
+  color: white;
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.solutions-badge-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.solutions-badge-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.solutions-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.solution-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.solution-check {
+  width: 28px;
+  height: 28px;
+  background: rgba(232,84,10,0.12);
+  border: 1px solid rgba(232,84,10,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.solution-check svg { width: 14px; height: 14px; stroke: var(--orange); fill: none; stroke-width: 2.5; }
+
+.solution-text-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--white);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.solution-text-desc {
+  font-size: 0.875rem;
+  color: var(--metal);
+  margin-top: 0.2rem;
+  line-height: 1.6;
+}
+
+/* ─── GALLERY ─── */
+.gallery-section {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: var(--black);
+}
+
+.gallery-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 2.5rem 0;
+}
+
+.filter-btn {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--metal-light);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  grid-auto-rows: clamp(180px, 22vw, 280px);
+  gap: 2px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--dark-2);
+}
+
+.gallery-item:nth-child(3n+1) {
+  grid-column: span 2;
+}
+@media (max-width: 700px) {
+  .gallery-item:nth-child(3n+1) { grid-column: span 1; }
+}
+
+.gallery-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* SVG placeholder for gallery */
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, transparent 60%);
+  transform: translateY(60%);
+  transition: transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+.gallery-item:hover .gallery-placeholder svg {
+  transform: scale(1.05);
+}
+
+.gallery-cat {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.35rem;
+}
+
+.gallery-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ─── CTA BAND ─── */
+.cta-band {
+  padding: clamp(2.5rem, 4vw, 4rem) 0;
+  background: var(--orange);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-band::before {
+  content: 'MetalPro';
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 14rem;
+  font-weight: 900;
+  color: rgba(0,0,0,0.08);
+  text-transform: uppercase;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.cta-band-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.cta-band-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.05;
+}
+
+.cta-band-text {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  margin-top: 0.6rem;
+  max-width: 500px;
+  font-weight: 300;
+}
+
+.btn-cta-dark {
+  background: var(--black);
+  color: var(--white);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-cta-dark:hover {
+  background: var(--dark-2);
+  transform: translateY(-2px);
+}
+
+/* ─── ABOUT PAGE ─── */
+.page-hero {
+  padding: clamp(7rem, 10vw, 10rem) 0 clamp(3rem, 5vw, 5rem);
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--orange), transparent);
+}
+
+.page-hero-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+
+.page-hero-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(3rem, 7vw, 6rem);
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.page-hero-sub {
+  font-size: 1.1rem;
+  color: var(--metal-light);
+  max-width: 600px;
+  margin-top: 1.5rem;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.about-main {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: var(--black);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.about-img {
+  position: relative;
+}
+
+.about-img-box {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-img-accent {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  width: 60%;
+  height: 60%;
+  border-top: 3px solid var(--orange);
+  border-right: 3px solid var(--orange);
+  pointer-events: none;
+}
+
+.about-img-accent-2 {
+  position: absolute;
+  bottom: -1rem;
+  left: -1rem;
+  width: 40%;
+  height: 40%;
+  border-bottom: 3px solid rgba(232,84,10,0.4);
+  border-left: 3px solid rgba(232,84,10,0.4);
+  pointer-events: none;
+}
+
+.mission-box {
+  background: var(--dark-2);
+  border-left: 3px solid var(--orange);
+  padding: clamp(1rem, 2vw, 1.75rem) clamp(1rem, 2.5vw, 2rem);
+  margin: 2rem 0;
+}
+
+.mission-title {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.75rem;
+}
+
+.mission-text {
+  font-size: 1rem;
+  color: var(--light-gray);
+  line-height: 1.75;
+  font-style: italic;
+}
+
+.approach-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 2rem 0;
+}
+
+.approach-step {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  align-items: flex-start;
+}
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 2.5rem;
+}
+
+.step-text {
+  font-size: 0.93rem;
+  color: var(--metal-light);
+  padding-top: 0.35rem;
+  line-height: 1.6;
+}
+
+.values-grid {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: var(--dark-2);
+}
+
+.values-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  gap: 1px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.04);
+  margin-top: 3rem;
+}
+
+.value-card {
+  background: var(--dark-2);
+  padding: clamp(1.25rem, 2.5vw, 2.5rem) clamp(1rem, 2vw, 2rem);
+  transition: var(--transition);
+  position: relative;
+}
+
+.value-card:hover {
+  background: var(--dark-3);
+}
+
+.value-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: transparent;
+  transition: var(--transition);
+}
+
+.value-card:hover::after {
+  background: var(--orange);
+}
+
+.value-icon {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: rgba(232,84,10,0.15);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.value-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.value-desc {
+  font-size: 0.87rem;
+  color: var(--metal);
+  line-height: 1.65;
+}
+
+/* ─── SERVICES PAGE ─── */
+.services-full {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: var(--black);
+}
+
+.services-full-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.service-card-full {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: clamp(1.25rem, 2.5vw, 2.5rem);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.service-card-full::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--orange);
+  transition: height 0.4s ease;
+}
+
+.service-card-full:hover {
+  border-color: rgba(232,84,10,0.2);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.service-card-full:hover::before {
+  height: 100%;
+}
+
+.sf-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(232,84,10,0.08);
+  border: 1px solid rgba(232,84,10,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+.service-card-full:hover .sf-icon {
+  background: rgba(232,84,10,0.18);
+}
+
+.sf-icon svg { width: 28px; height: 28px; stroke: var(--orange); fill: none; stroke-width: 1.5; }
+
+.sf-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.sf-desc {
+  font-size: 0.9rem;
+  color: var(--metal);
+  line-height: 1.7;
+}
+
+/* ─── PROCESS PAGE ─── */
+.process-section {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: var(--black);
+}
+
+.process-steps {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  left: 3.5rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--orange), rgba(232,84,10,0.1));
+}
+
+.process-step {
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: flex-start;
+  padding: 2.5rem 0 2.5rem 0;
+  position: relative;
+  transition: var(--transition);
+}
+
+.process-step::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 7rem; right: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.04);
+}
+
+.process-step:last-child::after { display: none; }
+
+.process-step-num {
+  width: 7rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.step-circle {
+  width: 56px;
+  height: 56px;
+  background: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: white;
+  flex-shrink: 0;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  position: relative;
+  z-index: 2;
+}
+
+.process-step-content {
+  flex: 1;
+  padding-top: 0.5rem;
+}
+
+.process-step-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.process-step-desc {
+  font-size: 0.97rem;
+  color: var(--metal-light);
+  line-height: 1.75;
+  max-width: 600px;
+}
+
+.process-note {
+  margin-top: 4rem;
+  background: var(--dark-2);
+  border: 1px solid rgba(232,84,10,0.2);
+  border-left: 3px solid var(--orange);
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.process-note svg { width: 22px; height: 22px; stroke: var(--orange); fill: none; stroke-width: 1.5; flex-shrink: 0; margin-top: 2px; }
+
+.process-note-text {
+  font-size: 0.95rem;
+  color: var(--metal-light);
+  line-height: 1.7;
+}
+
+.process-note-text strong { color: var(--white); }
+
+/* ─── WHY US ─── */
+.why-us {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: var(--black);
+}
+
+.why-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(360px, 100%), 1fr));
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.why-feature {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: clamp(1.25rem, 2vw, 2rem);
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: var(--transition);
+}
+
+.why-feature:hover {
+  border-color: rgba(232,84,10,0.2);
+}
+
+.why-icon {
+  width: 46px;
+  height: 46px;
+  background: rgba(232,84,10,0.1);
+  border: 1px solid rgba(232,84,10,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+
+.why-icon svg { width: 22px; height: 22px; stroke: var(--orange); fill: none; stroke-width: 1.5; }
+
+.why-feature-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.why-feature-desc {
+  font-size: 0.88rem;
+  color: var(--metal);
+  line-height: 1.65;
+}
+
+.comparison {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: var(--dark);
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 2px;
+  margin-top: 3.5rem;
+  background: rgba(255,255,255,0.04);
+}
+
+.comp-col {
+  background: var(--dark-2);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.comp-col.good {
+  background: var(--dark-3);
+}
+
+.comp-header {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.comp-col:not(.good) .comp-header {
+  color: var(--metal);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.comp-col.good .comp-header {
+  color: var(--orange);
+  border-color: var(--orange);
+}
+
+.comp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.comp-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+}
+
+.comp-col:not(.good) .comp-item { color: var(--metal); }
+.comp-col.good .comp-item { color: var(--light-gray); }
+
+.comp-icon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.comp-icon svg { width: 16px; height: 16px; stroke-width: 2.5; }
+
+.comp-col:not(.good) .comp-icon svg { stroke: var(--metal); fill: none; }
+.comp-col.good .comp-icon svg { stroke: var(--orange); fill: none; }
+
+/* ─── CONTACT ─── */
+.contact-section {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: var(--black);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-detail {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contact-detail-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(232,84,10,0.08);
+  border: 1px solid rgba(232,84,10,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+
+.contact-detail-icon svg { width: 20px; height: 20px; stroke: var(--orange); fill: none; stroke-width: 1.5; }
+
+.contact-detail-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--metal);
+  margin-bottom: 0.3rem;
+}
+
+.contact-detail-value {
+  font-size: 0.97rem;
+  color: var(--light-gray);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.contact-detail-value a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-detail-value a:hover { color: var(--orange); }
+
+.map-placeholder {
+  margin-top: 2rem;
+  height: 220px;
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: clamp(1.5rem, 3vw, 3rem);
+}
+
+.form-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.form-desc {
+  font-size: 0.9rem;
+  color: var(--metal);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.form-group:last-of-type { margin-bottom: 0; }
+
+.form-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--metal);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 0.85rem 1rem;
+  width: 100%;
+  transition: var(--transition);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--orange);
+  background: rgba(232,84,10,0.04);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--metal);
+}
+
+.form-select {
+  background: rgba(255,255,255,0.03);
+  cursor: pointer;
+}
+
+.form-select option {
+  background: var(--dark-3);
+  color: var(--white);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-file {
+  border: 1.5px dashed rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.02);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.form-file:hover {
+  border-color: var(--orange);
+  background: rgba(232,84,10,0.04);
+}
+
+.form-file svg { width: 28px; height: 28px; stroke: var(--metal); fill: none; stroke-width: 1.5; }
+
+.form-file-label {
+  font-size: 0.82rem;
+  color: var(--metal);
+}
+
+.form-file input {
+  display: none;
+}
+
+.form-submit-row {
+  margin-top: 1.5rem;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: clamp(2.5rem, 4vw, 4rem) 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.footer-logo {
+  margin-bottom: 1.25rem;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  color: var(--metal);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--metal-light);
+  margin-bottom: 0.6rem;
+}
+
+.footer-contact-item svg { width: 15px; height: 15px; stroke: var(--orange); fill: none; stroke-width: 2; }
+.footer-contact-item a { color: inherit; text-decoration: none; transition: color 0.2s; }
+.footer-contact-item a:hover { color: var(--orange); }
+
+.footer-col-title {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-link {
+  font-size: 0.87rem;
+  color: var(--metal);
+  cursor: pointer;
+  transition: color 0.2s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer-link::before {
+  content: '→';
+  color: var(--orange);
+  font-size: 0.75rem;
+}
+
+.footer-link:hover { color: var(--orange); }
+
+.footer-services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-service-item {
+  font-size: 0.85rem;
+  color: var(--metal);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-service-item::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.04);
+  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: var(--metal);
+}
+
+.footer-copy span { color: var(--orange); }
+
+/* ─── SCROLL ANIMATIONS ─── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.fade-up:nth-child(2) { transition-delay: 0.1s; }
+.fade-up:nth-child(3) { transition-delay: 0.2s; }
+.fade-up:nth-child(4) { transition-delay: 0.3s; }
+.fade-up:nth-child(5) { transition-delay: 0.4s; }
+.fade-up:nth-child(6) { transition-delay: 0.5s; }
+
+/* ─── LIGHT SECTIONS ─── */
+.section-light {
+  background: var(--off-white);
+  color: var(--black);
+}
+
+.section-light .section-title { color: var(--black); }
+.section-light .section-subtitle { color: #555; }
+.section-light .section-label { color: var(--orange-dark); }
+.section-light .section-label::before { background: var(--orange-dark); }
+
+.section-light .service-card-home {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.section-light .service-card-home:hover { background: #f0eeeb; }
+
+.section-light .service-card-title { color: var(--black); }
+.section-light .service-card-desc { color: #666; }
+
+/* ─── TICKER / MARQUEE ─── */
+.ticker {
+  background: var(--orange);
+  overflow: hidden;
+  padding: 0.75rem 0;
+}
+
+.ticker-inner {
+  display: flex;
+  gap: 4rem;
+  white-space: nowrap;
+  animation: ticker 30s linear infinite;
+  width: max-content;
+}
+
+.ticker-item {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.ticker-item::after {
+  content: '◆';
+  color: rgba(255,255,255,0.4);
+  font-size: 0.5rem;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ─── SECTION PADDING ─── */
+.section-pad {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+
+.section-header {
+  max-width: min(680px, 100%);
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+/* ─── SUCCESS MESSAGE ─── */
+.form-success {
+  background: rgba(232,84,10,0.1);
+  border: 1px solid rgba(232,84,10,0.3);
+  padding: 1.5rem 2rem;
+  margin-top: 1.5rem;
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-success.show { display: flex; }
+
+.form-success svg { width: 24px; height: 24px; stroke: var(--orange); fill: none; stroke-width: 2; flex-shrink: 0; }
+
+.form-success-text { font-size: 0.9rem; color: var(--light-gray); }
+
+/* ─── RADOVI SECTION light strip ─── */
+.section-dark-strip {
+  background: var(--dark-2);
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1100px) {
+  .container, .header-inner { padding: 0 clamp(1rem, 2.5vw, 2rem); }
+  /* auto-fill handles column collapse */
+}
+
+@media (max-width: 900px) {
+  .hero-visual { display: none; }
+  .hero-content { width: 100%; }
+  .solutions-grid { grid-template-columns: 1fr; gap: clamp(1.5rem, 3vw, 2.5rem); }
+  .about-grid { grid-template-columns: 1fr; gap: clamp(1.5rem, 3vw, 2.5rem); }
+  .about-img { max-width: 500px; }
+  .contact-grid { grid-template-columns: 1fr; gap: clamp(1.5rem, 3vw, 2.5rem); }
+
+  .comparison-grid { grid-template-columns: 1fr; }
+  .why-features { grid-template-columns: 1fr; }
+  .values-cards { grid-template-columns: repeat(2, 1fr); }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .container, .header-inner { padding: 0 1rem; }
+  .contact-form { padding: 1.25rem; }
+  .comp-col { padding: 1.5rem 1.25rem; }
+  nav { display: none; }
+  .hamburger { display: flex; }
+
+  .advantages-grid { flex-direction: column; }
+  .adv-divider { display: none; }
+
+
+  .hero-stats { flex-direction: column; gap: 1.5rem; }
+  .cta-band-inner { flex-direction: column; text-align: center; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .process-steps::before { display: none; }
+  .process-step { flex-direction: column; gap: 1rem; }
+
+  .contact-form { padding: 2rem 1.5rem; }
+}
+
+/* ─── HOME SECTIONS SPACING ─── */
+#page-home .section-pad { padding: clamp(3rem, 6vw, 5rem) 0; }
+
+/* ─── TAG LINE DIVIDER ─── */
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+  margin: 0;
+}
+
+/* special illustrated BGs */
+.industrial-bg {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(255,255,255,0.01) 20px,
+      rgba(255,255,255,0.01) 21px
+    );
+}
+
+
+/* ─── ULTRA-WIDE / LARGE SCREENS ─── */
+@media (min-width: 1600px) {
+  .container, .header-inner {
+    max-width: 1540px;
+    padding: 0 clamp(1.5rem, 2vw, 4rem);
+  }
+  .hero-title { font-size: clamp(4rem, 5vw, 6.5rem); }
+}
+
+@media (min-width: 1920px) {
+  .container, .header-inner {
+    max-width: 1800px;
+  }
+}
+
+@media (min-width: 2400px) {
+  html { font-size: 18px; }
+  .container, .header-inner {
+    max-width: 2100px;
+  }
+}
+
+@media (max-width: 900px) { .cta-band::before { display: none; } }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header>
+  <div class="header-inner">
+    <div class="logo" onclick="navigate('home')">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">MetalPro</span>
+        <span class="logo-tagline">Konstrukcije</span>
+      </div>
+    </div>
+
+    <nav>
+      <button class="nav-link active" onclick="navigate('home')">Početna</button>
+      <button class="nav-link" onclick="navigate('about')">O nama</button>
+      <button class="nav-link" onclick="navigate('services')">Usluge</button>
+      <button class="nav-link" onclick="navigate('radovi')">Radovi</button>
+      <button class="nav-link" onclick="navigate('process')">Proces rada</button>
+      <button class="nav-link" onclick="navigate('why')">Zašto mi</button>
+      <button class="nav-link nav-cta" onclick="navigate('contact')">Zatraži ponudu</button>
+    </nav>
+
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="nav-link" onclick="navigate('home')">Početna</button>
+  <button class="nav-link" onclick="navigate('about')">O nama</button>
+  <button class="nav-link" onclick="navigate('services')">Usluge</button>
+  <button class="nav-link" onclick="navigate('radovi')">Radovi</button>
+  <button class="nav-link" onclick="navigate('process')">Proces rada</button>
+  <button class="nav-link" onclick="navigate('why')">Zašto odabrati nas</button>
+  <button class="nav-link" onclick="navigate('contact')">Kontakt</button>
+</div>
+
+<!-- ═══════════════ PAGE: HOME ═══════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-texture"></div>
+
+    <div class="hero-visual">
+      <div class="hero-visual-inner"></div>
+      <div class="hero-img-placeholder">
+        <svg width="100%" height="100%" viewBox="0 0 700 700" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;opacity:0.4">
+          <!-- Industrial structure illustration -->
+          <rect width="700" height="700" fill="#111"/>
+          <!-- Grid floor -->
+          <line x1="0" y1="600" x2="700" y2="600" stroke="#333" stroke-width="1"/>
+          <!-- Vertical beams -->
+          <rect x="80" y="100" width="20" height="500" fill="#2a2a2a" stroke="#3d3d3d" stroke-width="1"/>
+          <rect x="200" y="50" width="20" height="550" fill="#222" stroke="#3a3a3a" stroke-width="1"/>
+          <rect x="400" y="80" width="20" height="520" fill="#2a2a2a" stroke="#3d3d3d" stroke-width="1"/>
+          <rect x="580" y="120" width="20" height="480" fill="#222" stroke="#3a3a3a" stroke-width="1"/>
+          <!-- Horizontal beams -->
+          <rect x="80" y="200" width="520" height="14" fill="#252525" stroke="#3a3a3a" stroke-width="1"/>
+          <rect x="80" y="350" width="520" height="14" fill="#252525" stroke="#3a3a3a" stroke-width="1"/>
+          <rect x="80" y="480" width="520" height="14" fill="#252525" stroke="#3a3a3a" stroke-width="1"/>
+          <!-- Cross braces -->
+          <line x1="80" y1="100" x2="220" y2="200" stroke="#333" stroke-width="1.5"/>
+          <line x1="220" y1="100" x2="80" y2="200" stroke="#333" stroke-width="1.5"/>
+          <line x1="400" y1="100" x2="600" y2="200" stroke="#333" stroke-width="1.5"/>
+          <line x1="600" y1="100" x2="400" y2="200" stroke="#333" stroke-width="1.5"/>
+          <!-- Orange accents on metal -->
+          <rect x="80" y="100" width="20" height="6" fill="#e8540a"/>
+          <rect x="400" y="80" width="20" height="6" fill="#e8540a"/>
+          <rect x="78" y="350" width="524" height="4" fill="#e8540a" opacity="0.6"/>
+          <!-- Welding sparks visual -->
+          <circle cx="210" cy="207" r="3" fill="#e8540a" opacity="0.8"/>
+          <circle cx="400" cy="207" r="2" fill="#ff6b1a" opacity="0.6"/>
+          <!-- Detail holes in beams -->
+          <circle cx="90" cy="150" r="5" fill="#111"/>
+          <circle cx="90" cy="250" r="5" fill="#111"/>
+          <circle cx="90" cy="420" r="5" fill="#111"/>
+          <circle cx="410" cy="150" r="5" fill="#111"/>
+          <circle cx="410" cy="300" r="5" fill="#111"/>
+          <!-- Stairs -->
+          <rect x="300" y="600" width="100" height="14" fill="#333"/>
+          <rect x="315" y="586" width="85" height="14" fill="#2e2e2e"/>
+          <rect x="330" y="572" width="70" height="14" fill="#2a2a2a"/>
+          <rect x="345" y="558" width="55" height="14" fill="#262626"/>
+          <rect x="360" y="544" width="40" height="14" fill="#222"/>
+          <!-- Stair railing -->
+          <line x1="360" y1="600" x2="320" y2="544" stroke="#555" stroke-width="2"/>
+          <line x1="380" y1="600" x2="340" y2="544" stroke="#555" stroke-width="2"/>
+          <!-- Gradient overlay -->
+          <defs>
+            <radialGradient id="hg" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#e8540a" stop-opacity="0.06"/>
+              <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="700" height="700" fill="url(#hg)"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content fade-up visible">
+        <div class="hero-badge">Osijek, Hrvatska</div>
+        <h1 class="hero-title">
+          Profesionalna<br>
+          izrada<br>
+          <span class="accent">metalnih</span><br>
+          <span class="outline">elemenata</span>
+        </h1>
+        <p class="hero-desc">
+          MetalPro Konstrukcije izrađuje i montira metalne ograde, stepeništa, kapije, nadstrešnice, rukohvate i metalne konstrukcije za privatne, poslovne i industrijske klijente.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="navigate('contact')">
+            Zatraži ponudu
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <button class="btn btn-outline" onclick="navigate('radovi')">
+            Pogledaj radove
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">15+</div>
+            <div class="hero-stat-label">Godina iskustva</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">500+</div>
+            <div class="hero-stat-label">Izvedenih projekata</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">100%</div>
+            <div class="hero-stat-label">Izrada po mjeri</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="ticker-item">Bravarija po mjeri</span>
+      <span class="ticker-item">Metalne ograde</span>
+      <span class="ticker-item">Stepeništa i rukohvati</span>
+      <span class="ticker-item">Kapije i vrata</span>
+      <span class="ticker-item">Nadstrešnice</span>
+      <span class="ticker-item">Čelične konstrukcije</span>
+      <span class="ticker-item">Zavarivanje</span>
+      <span class="ticker-item">Montaža na terenu</span>
+      <span class="ticker-item">Bravarija po mjeri</span>
+      <span class="ticker-item">Metalne ograde</span>
+      <span class="ticker-item">Stepeništa i rukohvati</span>
+      <span class="ticker-item">Kapije i vrata</span>
+      <span class="ticker-item">Nadstrešnice</span>
+      <span class="ticker-item">Čelične konstrukcije</span>
+      <span class="ticker-item">Zavarivanje</span>
+      <span class="ticker-item">Montaža na terenu</span>
+    </div>
+  </div>
+
+  <!-- ADVANTAGES -->
+  <div class="advantages">
+    <div class="container">
+      <div class="advantages-grid">
+        <div class="adv-item fade-up">
+          <div class="adv-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div class="adv-text">Izrada po mjeri</div>
+        </div>
+        <div class="adv-divider"></div>
+        <div class="adv-item fade-up">
+          <div class="adv-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12c.552 0 1-.448 1-1V9a2 2 0 0 0-2-2h-1.586l-1.707-1.707A2 2 0 0 0 15.293 5H8.707a2 2 0 0 0-1.414.586L5.586 7H4a2 2 0 0 0-2 2v2a1 1 0 0 0 1 1"/><rect x="5" y="11" width="14" height="10" rx="1"/></svg></div>
+          <div class="adv-text">Kvalitetni materijali</div>
+        </div>
+        <div class="adv-divider"></div>
+        <div class="adv-item fade-up">
+          <div class="adv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div>
+          <div class="adv-text">Precizna montaža</div>
+        </div>
+        <div class="adv-divider"></div>
+        <div class="adv-item fade-up">
+          <div class="adv-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div class="adv-text">Dogovoreni rokovi</div>
+        </div>
+        <div class="adv-divider"></div>
+        <div class="adv-item fade-up">
+          <div class="adv-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div class="adv-text">Privatni i poslovni klijenti</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT WE MAKE -->
+  <section class="section-pad" style="background:var(--black);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Što izrađujemo</div>
+        <h2 class="section-title">Metalni elementi<br><span>po vašoj mjeri</span></h2>
+        <p class="section-subtitle">Od jednostavnih ograda do složenih čeličnih konstrukcija — svaki element izrađujemo precizno, prema vašim zahtjevima i prostoru.</p>
+      </div>
+      <div class="services-grid-home">
+        <div class="service-card-home fade-up" onclick="navigate('services')">
+          <div class="service-num">01</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+          </div>
+          <div class="service-card-title">Metalne ograde</div>
+          <p class="service-card-desc">Moderne, klasične i industrijske metalne ograde za dvorišta, balkone, terase i poslovne objekte.</p>
+        </div>
+        <div class="service-card-home fade-up" onclick="navigate('services')">
+          <div class="service-num">02</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg>
+          </div>
+          <div class="service-card-title">Stepeništa i rukohvati</div>
+          <p class="service-card-desc">Metalna stepeništa, unutarnji i vanjski rukohvati koji spajaju sigurnost i moderan izgled.</p>
+        </div>
+        <div class="service-card-home fade-up" onclick="navigate('services')">
+          <div class="service-num">03</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div class="service-card-title">Kapije i vrata</div>
+          <p class="service-card-desc">Dvorišne kapije, klizna vrata, krilna vrata, industrijska vrata i metalni ulazni elementi po mjeri.</p>
+        </div>
+        <div class="service-card-home fade-up" onclick="navigate('services')">
+          <div class="service-num">04</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 17L12 2l10 15"/><path d="M2 17h20"/></svg>
+          </div>
+          <div class="service-card-title">Nadstrešnice</div>
+          <p class="service-card-desc">Metalne nadstrešnice za automobile, ulaze, terase i poslovne prostore — funkcionalne i estetski usklađene.</p>
+        </div>
+        <div class="service-card-home fade-up" onclick="navigate('services')">
+          <div class="service-num">05</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v2l-4 4v10H8V10L4 6V4z"/></svg>
+          </div>
+          <div class="service-card-title">Metalne konstrukcije</div>
+          <p class="service-card-desc">Čelične i metalne konstrukcije za poslovne objekte, hale, platforme i industrijske sustave.</p>
+        </div>
+        <div class="service-card-home fade-up" onclick="navigate('services')">
+          <div class="service-num">06</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41"/><path d="M4.93 19.07l1.41-1.41"/><path d="M22 12h-2M4 12H2M19.07 19.07l-1.41-1.41M4.93 4.93l1.41 1.41"/></svg>
+          </div>
+          <div class="service-card-title">Industrijski elementi</div>
+          <p class="service-card-desc">Industrijske metalne konstrukcije, platforme, nosači, konzole i elementi prema tehničkom nacrtu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOM SOLUTIONS -->
+  <section class="solutions industrial-bg">
+    <div class="container">
+      <div class="solutions-grid">
+        <div class="solutions-visual fade-up">
+          <div class="solutions-img">
+            <svg width="100%" height="100%" viewBox="0 0 500 380" preserveAspectRatio="xMidYMid slice" style="opacity:0.7">
+              <rect width="500" height="380" fill="#141414"/>
+              <!-- Workshop floor perspective -->
+              <polygon points="0,380 500,380 350,200 150,200" fill="#1a1a1a"/>
+              <!-- Metal workbench -->
+              <rect x="60" y="180" width="380" height="12" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="1"/>
+              <rect x="80" y="192" width="12" height="120" fill="#252525"/>
+              <rect x="408" y="192" width="12" height="120" fill="#252525"/>
+              <!-- Metal piece on bench -->
+              <rect x="120" y="155" width="260" height="25" fill="#333" stroke="#444" stroke-width="1"/>
+              <rect x="140" y="148" width="30" height="7" fill="#3a3a3a"/>
+              <rect x="330" y="148" width="30" height="7" fill="#3a3a3a"/>
+              <!-- Welding spark -->
+              <circle cx="250" cy="158" r="8" fill="rgba(232,84,10,0.9)"/>
+              <circle cx="250" cy="158" r="15" fill="rgba(232,84,10,0.3)"/>
+              <circle cx="250" cy="158" r="25" fill="rgba(232,84,10,0.1)"/>
+              <!-- Sparks -->
+              <line x1="250" y1="150" x2="240" y2="130" stroke="#ff6b1a" stroke-width="1.5" opacity="0.8"/>
+              <line x1="250" y1="150" x2="265" y2="132" stroke="#ff8c42" stroke-width="1" opacity="0.7"/>
+              <line x1="250" y1="150" x2="235" y2="136" stroke="#e8540a" stroke-width="1" opacity="0.6"/>
+              <line x1="250" y1="150" x2="270" y2="142" stroke="#ff6b1a" stroke-width="1.5" opacity="0.5"/>
+              <!-- Tools on wall -->
+              <rect x="30" y="60" width="3" height="100" fill="#333" rx="1"/>
+              <rect x="25" y="80" width="13" height="3" fill="#444" rx="1"/>
+              <rect x="25" y="100" width="13" height="3" fill="#444" rx="1"/>
+              <rect x="25" y="120" width="13" height="3" fill="#444" rx="1"/>
+              <!-- Orange accent line on floor -->
+              <line x1="0" y1="200" x2="500" y2="200" stroke="#e8540a" stroke-width="2" opacity="0.4"/>
+              <!-- Corner orange detail -->
+              <polygon points="460,0 500,0 500,40" fill="#e8540a" opacity="0.8"/>
+            </svg>
+            <div class="solutions-badge">
+              <div class="solutions-badge-num">100%</div>
+              <div class="solutions-badge-text">Izrada po nacrtu</div>
+            </div>
+          </div>
+        </div>
+        <div class="fade-up">
+          <div class="section-label">Rješenja po mjeri</div>
+          <h2 class="section-title">Svaki projekt<br><span>je jedinstven</span></h2>
+          <p class="section-subtitle">Izrađujemo metalne elemente prema potrebama klijenta, prostoru, tehničkim zahtjevima i projektu. Moguća izrada prema nacrtu, dogovoru ili postojećem stanju na terenu.</p>
+          <div class="solutions-features">
+            <div class="solution-item">
+              <div class="solution-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div>
+                <div class="solution-text-title">Izrada prema tehničkom nacrtu</div>
+                <div class="solution-text-desc">Realiziramo projekte arhitekata, projektanata i inženjera s punom preciznošću.</div>
+              </div>
+            </div>
+            <div class="solution-item">
+              <div class="solution-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div>
+                <div class="solution-text-title">Izrada prema fotografiji prostora</div>
+                <div class="solution-text-desc">Dovoljno je poslati fotografiju i dimenzije — mi predlažemo optimalno rješenje.</div>
+              </div>
+            </div>
+            <div class="solution-item">
+              <div class="solution-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div>
+                <div class="solution-text-title">Montaža na terenu</div>
+                <div class="solution-text-desc">Elemente montiramo stručno, sigurno i uredno uz završnu provjeru kvalitete.</div>
+              </div>
+            </div>
+            <div class="solution-item">
+              <div class="solution-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div>
+                <div class="solution-text-title">Popravci i prilagodbe</div>
+                <div class="solution-text-desc">Prilagođavamo i popravljamo postojeće metalne konstrukcije i elemente.</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:2.5rem">
+            <button class="btn btn-primary" onclick="navigate('contact')">
+              Zatraži ponudu
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY PREVIEW -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-label">Naši radovi</div>
+        <h2 class="section-title">Izvedeni<br><span>projekti</span></h2>
+        <p class="section-subtitle">Svaki projekt govori o našem pristupu — preciznosti, kvaliteti materijala i profesionalnoj montaži.</p>
+      </div>
+      <div class="gallery-grid">
+        <!-- Gallery items with SVG bg patterns -->
+        <div class="gallery-item fade-up" data-cat="ograde">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#1c1c1c,#2a2a2a)">
+            <svg width="100%" height="100%" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.6">
+              <rect width="400" height="260" fill="#1a1a1a"/>
+              <!-- Fence pattern -->
+              <rect x="10" y="80" width="380" height="6" fill="#333"/>
+              <rect x="10" y="174" width="380" height="6" fill="#333"/>
+              <rect x="10" y="50" width="380" height="3" fill="#2a2a2a"/>
+              <rect x="10" y="207" width="380" height="3" fill="#2a2a2a"/>
+              <!-- Vertical bars -->
+              <rect x="20" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <rect x="45" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <rect x="70" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <rect x="95" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <rect x="120" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <rect x="145" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <rect x="170" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <rect x="195" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <rect x="220" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <rect x="245" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <rect x="270" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <rect x="295" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <rect x="320" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <rect x="345" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <rect x="370" y="40" width="10" height="185" fill="#2d2d2d"/>
+              <!-- Orange top caps -->
+              <polygon points="20,40 30,40 25,30" fill="#e8540a"/>
+              <polygon points="70,40 80,40 75,30" fill="#e8540a"/>
+              <polygon points="120,40 130,40 125,30" fill="#e8540a"/>
+              <polygon points="170,40 180,40 175,30" fill="#e8540a"/>
+              <polygon points="220,40 230,40 225,30" fill="#e8540a"/>
+              <polygon points="270,40 280,40 275,30" fill="#e8540a"/>
+              <polygon points="320,40 330,40 325,30" fill="#e8540a"/>
+              <polygon points="370,40 380,40 375,30" fill="#e8540a"/>
+            </svg>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-cat">Ograde</div>
+            <div class="gallery-name">Moderna metalna ograda za obiteljsku kuću</div>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-up" data-cat="stepenice">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#181818,#252525)">
+            <svg width="100%" height="100%" viewBox="0 0 200 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.7">
+              <rect width="200" height="260" fill="#1a1a1a"/>
+              <!-- Staircase -->
+              <rect x="0" y="240" width="200" height="20" fill="#2a2a2a"/>
+              <rect x="15" y="215" width="185" height="25" fill="#252525" stroke="#333" stroke-width="1"/>
+              <rect x="30" y="190" width="170" height="25" fill="#222" stroke="#333" stroke-width="1"/>
+              <rect x="45" y="165" width="155" height="25" fill="#1e1e1e" stroke="#333" stroke-width="1"/>
+              <rect x="60" y="140" width="140" height="25" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+              <rect x="75" y="115" width="125" height="25" fill="#1e1e1e" stroke="#333" stroke-width="1"/>
+              <rect x="90" y="90" width="110" height="25" fill="#222" stroke="#333" stroke-width="1"/>
+              <rect x="105" y="65" width="95" height="25" fill="#252525" stroke="#333" stroke-width="1"/>
+              <!-- Railing -->
+              <line x1="15" y1="215" x2="105" y2="65" stroke="#e8540a" stroke-width="3"/>
+              <line x1="40" y1="215" x2="130" y2="65" stroke="#555" stroke-width="1.5"/>
+              <!-- Vertical balusters -->
+              <line x1="20" y1="215" x2="20" y2="230" stroke="#444" stroke-width="2"/>
+              <line x1="50" y1="190" x2="50" y2="215" stroke="#444" stroke-width="2"/>
+              <line x1="80" y1="165" x2="80" y2="190" stroke="#444" stroke-width="2"/>
+              <line x1="110" y1="140" x2="110" y2="165" stroke="#444" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-cat">Stepeništa</div>
+            <div class="gallery-name">Vanjsko metalno stepenište s rukohvatom</div>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-up" data-cat="kapije">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#1c1c1c,#222)">
+            <svg width="100%" height="100%" viewBox="0 0 200 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.65">
+              <rect width="200" height="260" fill="#1a1a1a"/>
+              <!-- Gate left panel -->
+              <rect x="0" y="40" width="90" height="190" fill="#222" stroke="#333" stroke-width="1"/>
+              <rect x="5" y="50" width="80" height="170" fill="#1e1e1e" stroke="#2a2a2a" stroke-width="1"/>
+              <!-- Gate right panel -->
+              <rect x="110" y="40" width="90" height="190" fill="#222" stroke="#333" stroke-width="1"/>
+              <rect x="115" y="50" width="80" height="170" fill="#1e1e1e" stroke="#2a2a2a" stroke-width="1"/>
+              <!-- Horizontal bars -->
+              <rect x="5" y="70" width="80" height="4" fill="#2d2d2d"/>
+              <rect x="5" y="120" width="80" height="4" fill="#2d2d2d"/>
+              <rect x="5" y="170" width="80" height="4" fill="#2d2d2d"/>
+              <rect x="115" y="70" width="80" height="4" fill="#2d2d2d"/>
+              <rect x="115" y="120" width="80" height="4" fill="#2d2d2d"/>
+              <rect x="115" y="170" width="80" height="4" fill="#2d2d2d"/>
+              <!-- Vertical bars inner -->
+              <rect x="30" y="55" width="4" height="160" fill="#2a2a2a"/>
+              <rect x="60" y="55" width="4" height="160" fill="#2a2a2a"/>
+              <rect x="140" y="55" width="4" height="160" fill="#2a2a2a"/>
+              <rect x="170" y="55" width="4" height="160" fill="#2a2a2a"/>
+              <!-- Orange accent top -->
+              <rect x="0" y="40" width="90" height="5" fill="#e8540a"/>
+              <rect x="110" y="40" width="90" height="5" fill="#e8540a"/>
+              <!-- Gate opening -->
+              <rect x="90" y="0" width="20" height="260" fill="#111"/>
+              <!-- Handle -->
+              <circle cx="92" cy="135" r="5" fill="#555"/>
+            </svg>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-cat">Kapije</div>
+            <div class="gallery-name">Klizna dvorišna kapija</div>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-up" data-cat="nadstresnice">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#1a1a1a,#282828)">
+            <svg width="100%" height="100%" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.65">
+              <rect width="400" height="260" fill="#1a1a1a"/>
+              <!-- Canopy top -->
+              <polygon points="50,100 350,100 380,120 20,120" fill="#252525" stroke="#333" stroke-width="1"/>
+              <!-- Canopy panels -->
+              <rect x="20" y="120" width="360" height="8" fill="#222"/>
+              <line x1="100" y1="100" x2="100" y2="128" stroke="#333" stroke-width="1"/>
+              <line x1="200" y1="100" x2="200" y2="128" stroke="#333" stroke-width="1"/>
+              <line x1="300" y1="100" x2="300" y2="128" stroke="#333" stroke-width="1"/>
+              <!-- Support columns -->
+              <rect x="40" y="120" width="12" height="130" fill="#2a2a2a" stroke="#333" stroke-width="1"/>
+              <rect x="348" y="120" width="12" height="130" fill="#2a2a2a" stroke="#333" stroke-width="1"/>
+              <!-- Orange accent -->
+              <rect x="50" y="100" width="300" height="4" fill="#e8540a" opacity="0.7"/>
+              <!-- Car silhouette -->
+              <rect x="80" y="180" width="240" height="50" rx="10" fill="#1e1e1e"/>
+              <rect x="110" y="160" width="180" height="30" rx="8" fill="#222"/>
+              <!-- Wheels -->
+              <circle cx="120" cy="230" r="18" fill="#111" stroke="#333" stroke-width="2"/>
+              <circle cx="280" cy="230" r="18" fill="#111" stroke="#333" stroke-width="2"/>
+              <circle cx="120" cy="230" r="8" fill="#222"/>
+              <circle cx="280" cy="230" r="8" fill="#222"/>
+            </svg>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-cat">Nadstrešnice</div>
+            <div class="gallery-name">Metalna nadstrešnica za automobil</div>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-up" data-cat="konstrukcije">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#161616,#222)">
+            <svg width="100%" height="100%" viewBox="0 0 200 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.7">
+              <rect width="200" height="260" fill="#1a1a1a"/>
+              <!-- Steel frame -->
+              <rect x="20" y="20" width="12" height="240" fill="#252525" stroke="#333" stroke-width="1"/>
+              <rect x="168" y="20" width="12" height="240" fill="#252525" stroke="#333" stroke-width="1"/>
+              <rect x="20" y="20" width="160" height="10" fill="#2a2a2a"/>
+              <rect x="20" y="100" width="160" height="8" fill="#252525"/>
+              <rect x="20" y="180" width="160" height="8" fill="#252525"/>
+              <rect x="20" y="250" width="160" height="8" fill="#2a2a2a"/>
+              <!-- Cross braces -->
+              <line x1="32" y1="30" x2="168" y2="100" stroke="#333" stroke-width="2"/>
+              <line x1="168" y1="30" x2="32" y2="100" stroke="#333" stroke-width="2"/>
+              <line x1="32" y1="108" x2="168" y2="180" stroke="#333" stroke-width="2"/>
+              <line x1="168" y1="108" x2="32" y2="180" stroke="#333" stroke-width="2"/>
+              <!-- Orange details -->
+              <circle cx="20" cy="100" r="6" fill="#e8540a"/>
+              <circle cx="180" cy="100" r="6" fill="#e8540a"/>
+              <circle cx="20" cy="180" r="6" fill="#e8540a"/>
+              <circle cx="180" cy="180" r="6" fill="#e8540a"/>
+              <!-- Bolts -->
+              <circle cx="32" cy="30" r="4" fill="#333"/>
+              <circle cx="168" cy="30" r="4" fill="#333"/>
+            </svg>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-cat">Konstrukcije</div>
+            <div class="gallery-name">Čelična konstrukcija za poslovni objekt</div>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-up" data-cat="industrijski">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#1c1c1c,#252525)">
+            <svg width="100%" height="100%" viewBox="0 0 200 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.65">
+              <rect width="200" height="260" fill="#1a1a1a"/>
+              <!-- Platform -->
+              <rect x="20" y="140" width="160" height="8" fill="#2d2d2d" stroke="#3a3a3a" stroke-width="1"/>
+              <!-- Grating pattern -->
+              <line x1="20" y1="148" x2="20" y2="250" stroke="#2a2a2a" stroke-width="2"/>
+              <line x1="40" y1="148" x2="40" y2="250" stroke="#2a2a2a" stroke-width="2"/>
+              <line x1="60" y1="148" x2="60" y2="250" stroke="#2a2a2a" stroke-width="2"/>
+              <line x1="80" y1="148" x2="80" y2="250" stroke="#2a2a2a" stroke-width="2"/>
+              <line x1="100" y1="148" x2="100" y2="250" stroke="#2a2a2a" stroke-width="2"/>
+              <line x1="120" y1="148" x2="120" y2="250" stroke="#2a2a2a" stroke-width="2"/>
+              <line x1="140" y1="148" x2="140" y2="250" stroke="#2a2a2a" stroke-width="2"/>
+              <line x1="160" y1="148" x2="160" y2="250" stroke="#2a2a2a" stroke-width="2"/>
+              <line x1="180" y1="148" x2="180" y2="250" stroke="#2a2a2a" stroke-width="2"/>
+              <!-- Platform railings -->
+              <rect x="18" y="100" width="4" height="40" fill="#333"/>
+              <rect x="178" y="100" width="4" height="40" fill="#333"/>
+              <rect x="18" y="100" width="164" height="4" fill="#e8540a" opacity="0.8"/>
+              <!-- Support structure -->
+              <rect x="30" y="148" width="8" height="112" fill="#252525"/>
+              <rect x="162" y="148" width="8" height="112" fill="#252525"/>
+              <!-- Cross supports -->
+              <line x1="38" y1="180" x2="162" y2="220" stroke="#333" stroke-width="1.5"/>
+              <line x1="162" y1="180" x2="38" y2="220" stroke="#333" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-cat">Industrijski</div>
+            <div class="gallery-name">Industrijska platforma po mjeri</div>
+          </div>
+        </div>
+
+        <div class="gallery-item fade-up" data-cat="ograde">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#1e1e1e,#2a2a2a)">
+            <svg width="100%" height="100%" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.65">
+              <rect width="400" height="260" fill="#1a1a1a"/>
+              <!-- Balcony railing -->
+              <rect x="0" y="180" width="400" height="10" fill="#2d2d2d" stroke="#3a3a3a" stroke-width="1"/>
+              <rect x="0" y="110" width="400" height="6" fill="#2a2a2a" stroke="#333" stroke-width="1"/>
+              <!-- Modern vertical bars with geometric pattern -->
+              <rect x="15" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="35" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="55" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="75" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="95" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="115" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="135" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="155" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="175" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="195" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="215" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="235" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="255" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="275" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="295" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="315" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="335" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="355" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <rect x="375" y="116" width="8" height="64" fill="#2d2d2d"/>
+              <!-- Orange accent line -->
+              <rect x="0" y="110" width="400" height="3" fill="#e8540a" opacity="0.6"/>
+              <!-- Background building -->
+              <rect x="0" y="0" width="400" height="110" fill="url(#sky)"/>
+              <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0a0a0a"/><stop offset="100%" stop-color="#1a1a1a"/></linearGradient></defs>
+            </svg>
+          </div>
+          <div class="gallery-overlay">
+            <div class="gallery-cat">Ograde</div>
+            <div class="gallery-name">Balkonska ograda s modernim dizajnom</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:3rem">
+        <button class="btn btn-outline" onclick="navigate('radovi')">
+          Sve galerije radova
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2 class="cta-band-title">Trebate metalni<br>element po mjeri?</h2>
+          <p class="cta-band-text">Pošaljite nam upit, dimenzije ili fotografiju prostora i pripremit ćemo vam prijedlog rješenja.</p>
+        </div>
+        <button class="btn-cta-dark" onclick="navigate('contact')">
+          Zatraži ponudu
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page-home -->
+
+
+<!-- ═══════════════ PAGE: ABOUT ═══════════════ -->
+<div id="page-about" class="page">
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero-label">O nama</div>
+      <h1 class="page-hero-title">MetalPro<br><span style="color:var(--orange)">Konstrukcije</span></h1>
+      <p class="page-hero-sub">Specijalizirani smo za bravariju, izradu metalnih elemenata i metalnih konstrukcija po mjeri. Naš rad temelji se na preciznosti, kvalitetnim materijalima i pouzdanoj izvedbi.</p>
+    </div>
+  </div>
+
+  <section class="about-main">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img fade-up">
+          <div class="about-img-box">
+            <svg width="100%" height="100%" viewBox="0 0 400 520" preserveAspectRatio="xMidYMid slice" style="opacity:0.65">
+              <rect width="400" height="520" fill="#141414"/>
+              <!-- Worker silhouette at welding -->
+              <ellipse cx="200" cy="350" rx="45" ry="80" fill="#1e1e1e"/>
+              <ellipse cx="200" cy="240" rx="30" ry="35" fill="#1e1e1e"/>
+              <!-- Arms -->
+              <path d="M170,290 Q120,310 110,340" stroke="#1e1e1e" stroke-width="18" fill="none" stroke-linecap="round"/>
+              <path d="M230,290 Q280,310 290,340" stroke="#1e1e1e" stroke-width="18" fill="none" stroke-linecap="round"/>
+              <!-- Welding torch -->
+              <line x1="290" y1="340" x2="320" y2="370" stroke="#2a2a2a" stroke-width="8" stroke-linecap="round"/>
+              <!-- Welding spark -->
+              <circle cx="320" cy="370" r="12" fill="rgba(232,84,10,0.9)"/>
+              <circle cx="320" cy="370" r="22" fill="rgba(232,84,10,0.4)"/>
+              <circle cx="320" cy="370" r="35" fill="rgba(232,84,10,0.15)"/>
+              <!-- Sparks -->
+              <line x1="320" y1="362" x2="305" y2="340" stroke="#ff6b1a" stroke-width="1.5"/>
+              <line x1="320" y1="362" x2="340" y2="342" stroke="#ff8c42" stroke-width="1.5"/>
+              <line x1="320" y1="362" x2="330" y2="335" stroke="#ffa040" stroke-width="1"/>
+              <line x1="320" y1="362" x2="345" y2="352" stroke="#e8540a" stroke-width="1"/>
+              <line x1="320" y1="362" x2="300" y2="348" stroke="#ff6b1a" stroke-width="1"/>
+              <!-- Metal surface -->
+              <rect x="50" y="380" width="300" height="20" fill="#252525" stroke="#333" stroke-width="1"/>
+              <rect x="50" y="400" width="300" height="100" fill="#1e1e1e"/>
+              <!-- Workshop background -->
+              <rect x="0" y="0" width="400" height="200" fill="#111"/>
+              <line x1="0" y1="200" x2="400" y2="200" stroke="#333" stroke-width="1"/>
+              <!-- Tools on wall -->
+              <rect x="30" y="30" width="3" height="150" fill="#2a2a2a" rx="1"/>
+              <rect x="25" y="50" width="13" height="3" fill="#333" rx="1"/>
+              <rect x="25" y="80" width="13" height="3" fill="#333" rx="1"/>
+              <rect x="25" y="110" width="13" height="3" fill="#333" rx="1"/>
+              <rect x="25" y="140" width="13" height="3" fill="#333" rx="1"/>
+              <!-- Orange corner detail -->
+              <polygon points="370,0 400,0 400,30" fill="#e8540a" opacity="0.9"/>
+            </svg>
+            <div class="about-img-accent"></div>
+            <div class="about-img-accent-2"></div>
+          </div>
+        </div>
+        <div class="fade-up">
+          <div class="section-label">Naša priča</div>
+          <h2 class="section-title">Preciznost<br>u svakom<br><span>detalju</span></h2>
+
+          <p style="font-size:1rem;color:var(--metal-light);line-height:1.8;margin-top:1.5rem">
+            MetalPro Konstrukcije je firma specijalizirana za bravariju, izradu metalnih elemenata i metalnih konstrukcija po mjeri. Radimo za privatne, poslovne i industrijske klijente, a svaki projekt prilagođavamo prostoru, namjeni i tehničkim zahtjevima.
+          </p>
+
+          <div class="mission-box">
+            <div class="mission-title">Naša misija</div>
+            <p class="mission-text">
+              "Naša misija je pružiti kvalitetna, sigurna i dugotrajna metalna rješenja koja kombiniraju funkcionalnost, preciznu izradu i moderan izgled."
+            </p>
+          </div>
+
+          <div class="section-label">Naš pristup</div>
+          <div class="approach-steps">
+            <div class="approach-step">
+              <div class="step-num">01</div>
+              <div class="step-text">Analiziramo potrebe klijenta i prostor na koji se element postavlja</div>
+            </div>
+            <div class="approach-step">
+              <div class="step-num">02</div>
+              <div class="step-text">Predlažemo optimalno tehničko rješenje prema zahtjevima</div>
+            </div>
+            <div class="approach-step">
+              <div class="step-num">03</div>
+              <div class="step-text">Izrađujemo metalne elemente po mjeri u vlastitoj radionici</div>
+            </div>
+            <div class="approach-step">
+              <div class="step-num">04</div>
+              <div class="step-text">Brinemo o preciznoj i sigurnoj montaži na terenu</div>
+            </div>
+            <div class="approach-step">
+              <div class="step-num">05</div>
+              <div class="step-text">Poštujemo dogovorene rokove i isporučujemo u roku</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values-grid">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-label">Naše vrijednosti</div>
+        <h2 class="section-title">Što nas<br><span>definira</span></h2>
+      </div>
+      <div class="values-cards">
+        <div class="value-card fade-up">
+          <div class="value-icon">01</div>
+          <div class="value-name">Kvaliteta</div>
+          <p class="value-desc">Koristimo kvalitetne materijale i primjenjujemo provjerene tehnike izrade za svaki projekt.</p>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon">02</div>
+          <div class="value-name">Preciznost</div>
+          <p class="value-desc">Svaki millimetar je bitan. Radimo precizno, prema nacrtu, dogovoru i tehničkim zahtjevima.</p>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon">03</div>
+          <div class="value-name">Pouzdanost</div>
+          <p class="value-desc">Poštujemo rokove, jasno komuniciramo i isporučujemo ono što smo dogovorili.</p>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon">04</div>
+          <div class="value-name">Sigurnost</div>
+          <p class="value-desc">Sigurnost naših klijenata je prioritet — svaka konstrukcija i element prolazi provjeru kvalitete.</p>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon">05</div>
+          <div class="value-name">Dugotrajnost</div>
+          <p class="value-desc">Izrađujemo metalne elemente koji traju — bez kompromisa u materijalima i izvedbi.</p>
+        </div>
+        <div class="value-card fade-up">
+          <div class="value-icon">06</div>
+          <div class="value-name">Profesionalnost</div>
+          <p class="value-desc">Profesionalan pristup od prvog kontakta do predaje gotovog elementa ili konstrukcije.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2 class="cta-band-title">Suradnja počinje<br>jednim upitom</h2>
+          <p class="cta-band-text">Pošaljite nam informacije o projektu i pripremit ćemo vam prijedlog rješenja.</p>
+        </div>
+        <button class="btn-cta-dark" onclick="navigate('contact')">Zatraži ponudu</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page-about -->
+
+
+<!-- ═══════════════ PAGE: SERVICES ═══════════════ -->
+<div id="page-services" class="page">
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero-label">Naše usluge</div>
+      <h1 class="page-hero-title">Bravarske<br><span style="color:var(--orange)">usluge</span></h1>
+      <p class="page-hero-sub">Izrada metalnih ograda, kapija, rukohvata, stepeništa, nadstrešnica, čeličnih konstrukcija i metalnih elemenata po mjeri.</p>
+    </div>
+  </div>
+
+  <section class="services-full">
+    <div class="container">
+      <div class="services-full-grid">
+        <div class="service-card-full fade-up">
+          <div class="sf-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div class="sf-title">Bravarija po mjeri</div>
+          <p class="sf-desc">Izrada metalnih elemenata prema dimenzijama, prostoru i potrebama klijenta. Uključuje individualna rješenja za kuće, zgrade, poslovne prostore i industrijske objekte. Svaki element nastaje prema točnim mjerama i tehničkim specifikacijama.</p>
+        </div>
+        <div class="service-card-full fade-up">
+          <div class="sf-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><line x1="3" y1="9" x2="21" y2="9"/></svg></div>
+          <div class="sf-title">Metalne ograde</div>
+          <p class="sf-desc">Izrada modernih, klasičnih i industrijskih metalnih ograda za dvorišta, balkone, terase, poslovne objekte i stambene zgrade. Prilagodba dizajna, visine i materijala prema zahtjevima i prostoru.</p>
+        </div>
+        <div class="service-card-full fade-up">
+          <div class="sf-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg></div>
+          <div class="sf-title">Stepeništa i rukohvati</div>
+          <p class="sf-desc">Izrada metalnih stepeništa, unutarnjih i vanjskih rukohvata, zaštitnih ograda i konstrukcija koje spajaju sigurnost i moderan dizajn. Izvedba za stambene, poslovne i industrijske objekte.</p>
+        </div>
+        <div class="service-card-full fade-up">
+          <div class="sf-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+          <div class="sf-title">Kapije i vrata</div>
+          <p class="sf-desc">Izrada dvorišnih kapija, kliznih vrata, krilnih vrata, industrijskih vrata i metalnih ulaznih elemenata. Svaka kapija prilagođena je prostoru, namjeni i vizualnom identitetu klijenta.</p>
+        </div>
+        <div class="service-card-full fade-up">
+          <div class="sf-icon"><svg viewBox="0 0 24 24"><path d="M2 17L12 2l10 15"/><path d="M2 17h20"/></svg></div>
+          <div class="sf-title">Nadstrešnice</div>
+          <p class="sf-desc">Izrada metalnih nadstrešnica za automobile, ulaze, terase, poslovne prostore i industrijske objekte. Kombinacija funkcionalnosti, trajnosti i estetike prilagođene prostoru.</p>
+        </div>
+        <div class="service-card-full fade-up">
+          <div class="sf-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div class="sf-title">Metalne i čelične konstrukcije</div>
+          <p class="sf-desc">Izrada konstrukcija za različite namjene, uključujući poslovne objekte, pomoćne objekte, hale, platforme i industrijske sustave. Svaka konstrukcija projektirana prema statičkim i tehničkim zahtjevima.</p>
+        </div>
+        <div class="service-card-full fade-up">
+          <div class="sf-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+          <div class="sf-title">Zavarivanje</div>
+          <p class="sf-desc">Profesionalno zavarivanje metalnih elemenata, popravci i spajanje konstrukcija. Koristimo suvremene tehnike zavarivanja za čvrste i dugotvrajne spojeve.</p>
+        </div>
+        <div class="service-card-full fade-up">
+          <div class="sf-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+          <div class="sf-title">Izrada po nacrtu</div>
+          <p class="sf-desc">Izrada metalnih elemenata prema tehničkom nacrtu, projektu ili specifičnim zahtjevima klijenta. Surađujemo s arhitektima, projektantima i inženjerima.</p>
+        </div>
+        <div class="service-card-full fade-up">
+          <div class="sf-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div class="sf-title">Montaža</div>
+          <p class="sf-desc">Montaža izrađenih metalnih elemenata na terenu uz pažnju na sigurnost, preciznost i urednu završnu izvedbu. Uključuje provjeru kvalitete i urednost radnog mjesta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2 class="cta-band-title">Imate projekt<br>ili ideju?</h2>
+          <p class="cta-band-text">Pošaljite nam dimenzije, nacrt ili fotografiju prostora i pripremit ćemo vam prijedlog rješenja.</p>
+        </div>
+        <button class="btn-cta-dark" onclick="navigate('contact')">Zatraži ponudu</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page-services -->
+
+
+<!-- ═══════════════ PAGE: RADOVI ═══════════════ -->
+<div id="page-radovi" class="page">
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero-label">Naši radovi</div>
+      <h1 class="page-hero-title">Izvedeni<br><span style="color:var(--orange)">projekti</span></h1>
+      <p class="page-hero-sub">Svaki projekt govori o preciznosti, kvaliteti materijala i profesionalnoj montaži. Pregledajte naše izvedene radove prema vrsti usluge.</p>
+    </div>
+  </div>
+
+  <section class="gallery-section" style="padding-top:4rem">
+    <div class="container">
+      <div class="gallery-filters">
+        <button class="filter-btn active" onclick="filterGallery('sve',this)">Sve</button>
+        <button class="filter-btn" onclick="filterGallery('ograde',this)">Ograde</button>
+        <button class="filter-btn" onclick="filterGallery('stepenice',this)">Stepeništa</button>
+        <button class="filter-btn" onclick="filterGallery('kapije',this)">Kapije</button>
+        <button class="filter-btn" onclick="filterGallery('nadstresnice',this)">Nadstrešnice</button>
+        <button class="filter-btn" onclick="filterGallery('konstrukcije',this)">Konstrukcije</button>
+        <button class="filter-btn" onclick="filterGallery('industrijski',this)">Industrijski</button>
+        <button class="filter-btn" onclick="filterGallery('rukohvati',this)">Rukohvati</button>
+      </div>
+
+      <div class="gallery-grid" id="main-gallery">
+        <!-- All gallery items -->
+        <div class="gallery-item" data-cat="ograde">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#1c1c1c,#2a2a2a)">
+            <svg width="100%" height="100%" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.6"><rect width="400" height="260" fill="#1a1a1a"/><rect x="10" y="80" width="380" height="6" fill="#333"/><rect x="10" y="174" width="380" height="6" fill="#333"/><rect x="20" y="40" width="10" height="185" fill="#2d2d2d"/><rect x="45" y="40" width="10" height="185" fill="#2d2d2d"/><rect x="70" y="40" width="10" height="185" fill="#2d2d2d"/><rect x="95" y="40" width="10" height="185" fill="#2d2d2d"/><rect x="120" y="40" width="10" height="185" fill="#2d2d2d"/><rect x="145" y="40" width="10" height="185" fill="#2d2d2d"/><rect x="170" y="40" width="10" height="185" fill="#2d2d2d"/><rect x="195" y="40" width="10" height="185" fill="#2d2d2d"/><rect x="220" y="40" width="10" height="185" fill="#2d2d2d"/><rect x="245" y="40" width="10" height="185" fill="#2d2d2d"/><rect x="270" y="40" width="10" height="185" fill="#2d2d2d"/><rect x="295" y="40" width="10" height="185" fill="#2d2d2d"/><rect x="320" y="40" width="10" height="185" fill="#2d2d2d"/><rect x="345" y="40" width="10" height="185" fill="#2d2d2d"/><rect x="370" y="40" width="10" height="185" fill="#2d2d2d"/><polygon points="20,40 30,40 25,30" fill="#e8540a"/><polygon points="95,40 105,40 100,30" fill="#e8540a"/><polygon points="170,40 180,40 175,30" fill="#e8540a"/><polygon points="245,40 255,40 250,30" fill="#e8540a"/><polygon points="320,40 330,40 325,30" fill="#e8540a"/></svg>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-cat">Ograde</div><div class="gallery-name">Moderna metalna ograda — obiteljska kuća</div></div>
+        </div>
+        <div class="gallery-item" data-cat="stepenice">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#181818,#252525)">
+            <svg width="100%" height="100%" viewBox="0 0 200 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.7"><rect width="200" height="260" fill="#1a1a1a"/><rect x="0" y="240" width="200" height="20" fill="#2a2a2a"/><rect x="15" y="215" width="185" height="25" fill="#252525" stroke="#333" stroke-width="1"/><rect x="30" y="190" width="170" height="25" fill="#222" stroke="#333" stroke-width="1"/><rect x="45" y="165" width="155" height="25" fill="#1e1e1e" stroke="#333" stroke-width="1"/><rect x="60" y="140" width="140" height="25" fill="#1a1a1a" stroke="#333" stroke-width="1"/><rect x="75" y="115" width="125" height="25" fill="#1e1e1e" stroke="#333" stroke-width="1"/><rect x="90" y="90" width="110" height="25" fill="#222" stroke="#333" stroke-width="1"/><rect x="105" y="65" width="95" height="25" fill="#252525" stroke="#333" stroke-width="1"/><line x1="15" y1="215" x2="105" y2="65" stroke="#e8540a" stroke-width="3"/><line x1="40" y1="215" x2="130" y2="65" stroke="#555" stroke-width="1.5"/></svg>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-cat">Stepeništa</div><div class="gallery-name">Vanjsko metalno stepenište s rukohvatom</div></div>
+        </div>
+        <div class="gallery-item" data-cat="kapije">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#1c1c1c,#222)">
+            <svg width="100%" height="100%" viewBox="0 0 200 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.65"><rect width="200" height="260" fill="#1a1a1a"/><rect x="0" y="40" width="90" height="190" fill="#222" stroke="#333" stroke-width="1"/><rect x="110" y="40" width="90" height="190" fill="#222" stroke="#333" stroke-width="1"/><rect x="5" y="70" width="80" height="4" fill="#2d2d2d"/><rect x="5" y="120" width="80" height="4" fill="#2d2d2d"/><rect x="5" y="170" width="80" height="4" fill="#2d2d2d"/><rect x="115" y="70" width="80" height="4" fill="#2d2d2d"/><rect x="115" y="120" width="80" height="4" fill="#2d2d2d"/><rect x="115" y="170" width="80" height="4" fill="#2d2d2d"/><rect x="0" y="40" width="90" height="5" fill="#e8540a"/><rect x="110" y="40" width="90" height="5" fill="#e8540a"/><rect x="90" y="0" width="20" height="260" fill="#111"/></svg>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-cat">Kapije</div><div class="gallery-name">Klizna dvorišna kapija</div></div>
+        </div>
+        <div class="gallery-item" data-cat="nadstresnice">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#1a1a1a,#282828)">
+            <svg width="100%" height="100%" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.65"><rect width="400" height="260" fill="#1a1a1a"/><polygon points="50,100 350,100 380,120 20,120" fill="#252525" stroke="#333" stroke-width="1"/><rect x="20" y="120" width="360" height="8" fill="#222"/><rect x="40" y="120" width="12" height="130" fill="#2a2a2a"/><rect x="348" y="120" width="12" height="130" fill="#2a2a2a"/><rect x="50" y="100" width="300" height="4" fill="#e8540a" opacity="0.7"/><rect x="80" y="180" width="240" height="50" rx="10" fill="#1e1e1e"/><circle cx="120" cy="230" r="18" fill="#111" stroke="#333" stroke-width="2"/><circle cx="280" cy="230" r="18" fill="#111" stroke="#333" stroke-width="2"/></svg>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-cat">Nadstrešnice</div><div class="gallery-name">Metalna nadstrešnica za automobil</div></div>
+        </div>
+        <div class="gallery-item" data-cat="konstrukcije">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#161616,#222)">
+            <svg width="100%" height="100%" viewBox="0 0 200 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.7"><rect width="200" height="260" fill="#1a1a1a"/><rect x="20" y="20" width="12" height="240" fill="#252525" stroke="#333" stroke-width="1"/><rect x="168" y="20" width="12" height="240" fill="#252525" stroke="#333" stroke-width="1"/><rect x="20" y="20" width="160" height="10" fill="#2a2a2a"/><rect x="20" y="100" width="160" height="8" fill="#252525"/><rect x="20" y="180" width="160" height="8" fill="#252525"/><line x1="32" y1="30" x2="168" y2="100" stroke="#333" stroke-width="2"/><line x1="168" y1="30" x2="32" y2="100" stroke="#333" stroke-width="2"/><line x1="32" y1="108" x2="168" y2="180" stroke="#333" stroke-width="2"/><line x1="168" y1="108" x2="32" y2="180" stroke="#333" stroke-width="2"/><circle cx="20" cy="100" r="6" fill="#e8540a"/><circle cx="180" cy="100" r="6" fill="#e8540a"/></svg>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-cat">Konstrukcije</div><div class="gallery-name">Čelična konstrukcija — poslovni objekt</div></div>
+        </div>
+        <div class="gallery-item" data-cat="industrijski">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#1c1c1c,#252525)">
+            <svg width="100%" height="100%" viewBox="0 0 200 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.65"><rect width="200" height="260" fill="#1a1a1a"/><rect x="20" y="140" width="160" height="8" fill="#2d2d2d" stroke="#3a3a3a" stroke-width="1"/><line x1="20" y1="148" x2="20" y2="250" stroke="#2a2a2a" stroke-width="2"/><line x1="40" y1="148" x2="40" y2="250" stroke="#2a2a2a" stroke-width="2"/><line x1="60" y1="148" x2="60" y2="250" stroke="#2a2a2a" stroke-width="2"/><line x1="80" y1="148" x2="80" y2="250" stroke="#2a2a2a" stroke-width="2"/><line x1="100" y1="148" x2="100" y2="250" stroke="#2a2a2a" stroke-width="2"/><line x1="120" y1="148" x2="120" y2="250" stroke="#2a2a2a" stroke-width="2"/><line x1="140" y1="148" x2="140" y2="250" stroke="#2a2a2a" stroke-width="2"/><line x1="160" y1="148" x2="160" y2="250" stroke="#2a2a2a" stroke-width="2"/><line x1="180" y1="148" x2="180" y2="250" stroke="#2a2a2a" stroke-width="2"/><rect x="18" y="100" width="4" height="40" fill="#333"/><rect x="178" y="100" width="4" height="40" fill="#333"/><rect x="18" y="100" width="164" height="4" fill="#e8540a" opacity="0.8"/></svg>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-cat">Industrijski</div><div class="gallery-name">Industrijska platforma po mjeri</div></div>
+        </div>
+        <div class="gallery-item" data-cat="ograde">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#1e1e1e,#2a2a2a)">
+            <svg width="100%" height="100%" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.65"><rect width="400" height="260" fill="#1a1a1a"/><rect x="0" y="180" width="400" height="10" fill="#2d2d2d"/><rect x="0" y="110" width="400" height="6" fill="#2a2a2a"/><rect x="15" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="35" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="55" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="75" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="95" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="115" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="135" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="155" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="175" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="195" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="215" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="235" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="255" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="275" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="295" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="315" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="335" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="355" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="375" y="116" width="8" height="64" fill="#2d2d2d"/><rect x="0" y="110" width="400" height="3" fill="#e8540a" opacity="0.6"/></svg>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-cat">Ograde</div><div class="gallery-name">Balkonska ograda s modernim dizajnom</div></div>
+        </div>
+        <div class="gallery-item" data-cat="rukohvati">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#1a1a1a,#222)">
+            <svg width="100%" height="100%" viewBox="0 0 200 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.7"><rect width="200" height="260" fill="#1a1a1a"/><path d="M20 200 Q100 100 180 60" stroke="#e8540a" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M35 200 Q115 100 195 60" stroke="#444" stroke-width="3" fill="none" stroke-linecap="round"/><line x1="30" y1="200" x2="35" y2="230" stroke="#333" stroke-width="3"/><line x1="65" y1="180" x2="70" y2="210" stroke="#333" stroke-width="3"/><line x1="100" y1="155" x2="105" y2="185" stroke="#333" stroke-width="3"/><line x1="135" y1="125" x2="140" y2="155" stroke="#333" stroke-width="3"/><line x1="170" y1="95" x2="175" y2="125" stroke="#333" stroke-width="3"/><rect x="0" y="225" width="200" height="8" fill="#2d2d2d"/></svg>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-cat">Rukohvati</div><div class="gallery-name">Metalni rukohvat za stepenište</div></div>
+        </div>
+        <div class="gallery-item" data-cat="kapije">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#1b1b1b,#242424)">
+            <svg width="100%" height="100%" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.65"><rect width="400" height="260" fill="#1a1a1a"/><rect x="20" y="30" width="360" height="200" fill="#1e1e1e" stroke="#2a2a2a" stroke-width="2"/><rect x="20" y="30" width="360" height="8" fill="#e8540a" opacity="0.7"/><line x1="100" y1="30" x2="100" y2="230" stroke="#2a2a2a" stroke-width="3"/><line x1="200" y1="30" x2="200" y2="230" stroke="#2a2a2a" stroke-width="3"/><line x1="300" y1="30" x2="300" y2="230" stroke="#2a2a2a" stroke-width="3"/><line x1="20" y1="100" x2="380" y2="100" stroke="#252525" stroke-width="2"/><line x1="20" y1="160" x2="380" y2="160" stroke="#252525" stroke-width="2"/><rect x="190" y="120" width="20" height="20" rx="2" fill="#333"/><circle cx="200" cy="130" r="6" fill="#444"/></svg>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-cat">Kapije</div><div class="gallery-name">Industrijska klizna vrata za halu</div></div>
+        </div>
+        <div class="gallery-item" data-cat="nadstresnice">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#1a1a1a,#232323)">
+            <svg width="100%" height="100%" viewBox="0 0 200 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.65"><rect width="200" height="260" fill="#1a1a1a"/><polygon points="10,120 190,120 190,130 10,130" fill="#252525" stroke="#333" stroke-width="1"/><line x1="10" y1="120" x2="100" y2="60" stroke="#333" stroke-width="1.5"/><line x1="190" y1="120" x2="100" y2="60" stroke="#333" stroke-width="1.5"/><rect x="95" y="55" width="10" height="65" fill="#2d2d2d"/><rect x="20" y="130" width="8" height="100" fill="#2a2a2a"/><rect x="172" y="130" width="8" height="100" fill="#2a2a2a"/><line x1="10" y1="120" x2="190" y2="120" stroke="#e8540a" stroke-width="2.5" opacity="0.7"/></svg>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-cat">Nadstrešnice</div><div class="gallery-name">Nadstrešnica za ulaz poslovnog objekta</div></div>
+        </div>
+        <div class="gallery-item" data-cat="konstrukcije">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#171717,#242424)">
+            <svg width="100%" height="100%" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.65"><rect width="400" height="260" fill="#1a1a1a"/><rect x="30" y="20" width="14" height="240" fill="#252525"/><rect x="160" y="20" width="14" height="240" fill="#252525"/><rect x="226" y="20" width="14" height="240" fill="#252525"/><rect x="356" y="20" width="14" height="240" fill="#252525"/><rect x="30" y="20" width="340" height="10" fill="#2a2a2a"/><rect x="30" y="90" width="340" height="8" fill="#252525"/><rect x="30" y="170" width="340" height="8" fill="#252525"/><rect x="30" y="240" width="340" height="8" fill="#2a2a2a"/><line x1="44" y1="30" x2="174" y2="90" stroke="#333" stroke-width="1.5"/><line x1="174" y1="30" x2="44" y2="90" stroke="#333" stroke-width="1.5"/><line x1="240" y1="30" x2="370" y2="90" stroke="#333" stroke-width="1.5"/><line x1="370" y1="30" x2="240" y2="90" stroke="#333" stroke-width="1.5"/><rect x="28" y="88" width="344" height="4" fill="#e8540a" opacity="0.4"/></svg>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-cat">Konstrukcije</div><div class="gallery-name">Metalna hala — industrijski pogon</div></div>
+        </div>
+        <div class="gallery-item" data-cat="stepenice">
+          <div class="gallery-placeholder" style="background:linear-gradient(135deg,#1d1d1d,#2b2b2b)">
+            <svg width="100%" height="100%" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" style="opacity:0.65"><rect width="400" height="260" fill="#1a1a1a"/><rect x="0" y="250" width="400" height="10" fill="#2a2a2a"/><rect x="20" y="220" width="360" height="30" fill="#222"/><rect x="40" y="190" width="320" height="30" fill="#1e1e1e"/><rect x="60" y="160" width="280" height="30" fill="#222"/><rect x="80" y="130" width="240" height="30" fill="#1e1e1e"/><rect x="100" y="100" width="200" height="30" fill="#222"/><rect x="120" y="70" width="160" height="30" fill="#1e1e1e"/><line x1="20" y1="220" x2="120" y2="70" stroke="#e8540a" stroke-width="4" stroke-linecap="round"/><line x1="380" y1="220" x2="280" y2="70" stroke="#e8540a" stroke-width="4" stroke-linecap="round"/><line x1="50" y1="220" x2="150" y2="70" stroke="#444" stroke-width="2"/></svg>
+          </div>
+          <div class="gallery-overlay"><div class="gallery-cat">Stepeništa</div><div class="gallery-name">Unutarnje metalno stepenište</div></div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:4rem;padding-bottom:2rem">
+        <p style="color:var(--metal);font-size:1rem;margin-bottom:1.5rem">Želite slično rješenje za svoj prostor?</p>
+        <button class="btn btn-primary" onclick="navigate('contact')">
+          Zatraži ponudu
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-radovi -->
+
+
+<!-- ═══════════════ PAGE: PROCESS ═══════════════ -->
+<div id="page-process" class="page">
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero-label">Proces rada</div>
+      <h1 class="page-hero-title">Od upita do<br><span style="color:var(--orange)">montaže</span></h1>
+      <p class="page-hero-sub">Transparentan proces, jasna komunikacija i precizna izvedba — od vašeg prvog upita do gotovog metalnog elementa na terenu.</p>
+    </div>
+  </div>
+
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-label">5 koraka</div>
+        <h2 class="section-title">Kako<br><span>radimo</span></h2>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step fade-up">
+          <div class="process-step-num">
+            <div class="step-circle">01</div>
+          </div>
+          <div class="process-step-content">
+            <div class="process-step-title">Slanje upita</div>
+            <p class="process-step-desc">Klijent šalje osnovne informacije, dimenzije, fotografije prostora ili tehnički nacrt. Možete koristiti kontakt formu na web stranici, e-mail ili direktan poziv. Nema previše informacija — sve što pošaljete pomaže nam u pripremi ponude.</p>
+          </div>
+        </div>
+        <div class="process-step fade-up">
+          <div class="process-step-num">
+            <div class="step-circle">02</div>
+          </div>
+          <div class="process-step-content">
+            <div class="process-step-title">Konzultacije i procjena</div>
+            <p class="process-step-desc">Analiziramo potrebe, prostor, materijale, tehničke zahtjeve i mogućnosti izvedbe. Po potrebi posjećujemo lokaciju radi preciznog snimanja stanja. Predlažemo optimalno tehničko rješenje prema vašem prostoru i budžetu.</p>
+          </div>
+        </div>
+        <div class="process-step fade-up">
+          <div class="process-step-num">
+            <div class="step-circle">03</div>
+          </div>
+          <div class="process-step-content">
+            <div class="process-step-title">Izrada ponude</div>
+            <p class="process-step-desc">Pripremamo jasnu ponudu s opisom radova, okvirnim rokovima i potrebnim detaljima. Ponuda je bez skrivenih troškova — sve je jasno definirano prije početka suradnje. Nakon vašeg potvrđivanja krenemo s izradom.</p>
+          </div>
+        </div>
+        <div class="process-step fade-up">
+          <div class="process-step-num">
+            <div class="step-circle">04</div>
+          </div>
+          <div class="process-step-content">
+            <div class="process-step-title">Izrada u radionici</div>
+            <p class="process-step-desc">Nakon dogovora izrađujemo metalne elemente precizno, kvalitetno i prema dogovorenim specifikacijama u našoj opremljenom radionici. Koristimo kvalitetne materijale i provjerene tehnike obrade metala.</p>
+          </div>
+        </div>
+        <div class="process-step fade-up">
+          <div class="process-step-num">
+            <div class="step-circle">05</div>
+          </div>
+          <div class="process-step-content">
+            <div class="process-step-title">Montaža na terenu</div>
+            <p class="process-step-desc">Elemente montiramo stručno, sigurno i uredno, uz završnu provjeru kvalitete. Brinemo o urednosti radnog mjesta i minimalnom utjecaju na vaš svakodnevni život ili poslovanje.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="process-note fade-up">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <p class="process-note-text"><strong>Napomena:</strong> Za precizniju ponudu preporučujemo slanje fotografija prostora, okvirnih dimenzija i kratkog opisa željenog rješenja. Što više informacija pošaljete, to preciznije i brže možemo pripremiti ponudu za vaš projekt.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2 class="cta-band-title">Pokrenite vaš<br>projekt danas</h2>
+          <p class="cta-band-text">Proces počinje jednostavnim upitom. Javite nam se — odgovaramo brzo i konkretno.</p>
+        </div>
+        <button class="btn-cta-dark" onclick="navigate('contact')">Zatraži ponudu</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page-process -->
+
+
+<!-- ═══════════════ PAGE: WHY US ═══════════════ -->
+<div id="page-why" class="page">
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero-label">Zašto odabrati nas</div>
+      <h1 class="page-hero-title">Razlozi za<br><span style="color:var(--orange)">suradnju</span></h1>
+      <p class="page-hero-sub">Tražite pouzdanog partnera za metalne radove? Evo zašto klijenti biraju MetalPro Konstrukcije.</p>
+    </div>
+  </div>
+
+  <section class="why-us">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-label">Naše prednosti</div>
+        <h2 class="section-title">Što nas<br><span>čini drugačijima</span></h2>
+      </div>
+      <div class="why-features">
+        <div class="why-feature fade-up">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div>
+            <div class="why-feature-title">Iskustvo u izradi metalnih elemenata</div>
+            <p class="why-feature-desc">Višegodišnje iskustvo u bravariji i metalnoj obradi za privatne, poslovne i industrijske klijente. Svaki projekt pristupamo s poznavanjem materijala i tehnike.</p>
+          </div>
+        </div>
+        <div class="why-feature fade-up">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <div>
+            <div class="why-feature-title">Izrada po mjeri</div>
+            <p class="why-feature-desc">Ne prodajemo standardne elemente s polica — svaki element izrađujemo prema vašim dimenzijama, prostoru i zahtjevima.</p>
+          </div>
+        </div>
+        <div class="why-feature fade-up">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <div>
+            <div class="why-feature-title">Kvalitetni materijali</div>
+            <p class="why-feature-desc">Koristimo kvalitetne metalne materijale koji osiguravaju trajnost i sigurnost vaših metalnih elemenata dugi niz godina.</p>
+          </div>
+        </div>
+        <div class="why-feature fade-up">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div>
+            <div class="why-feature-title">Precizna i sigurna montaža</div>
+            <p class="why-feature-desc">Montaža je završni, kritični korak — radimo je stručno, sigurno i uredno uz završnu provjeru svakog elementa.</p>
+          </div>
+        </div>
+        <div class="why-feature fade-up">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div>
+            <div class="why-feature-title">Jasna komunikacija</div>
+            <p class="why-feature-desc">Informiramo vas o svakom koraku, jasno objašnjavamo ponudu i rokove. Nema iznenađenja — sve je transparentno od početka do kraja.</p>
+          </div>
+        </div>
+        <div class="why-feature fade-up">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div>
+            <div class="why-feature-title">Poštivanje dogovorenih rokova</div>
+            <p class="why-feature-desc">Rokovi su dio dogovora — pridržavamo ih se i informiramo klijente ako dođe do promjene. Vaše planove uzimamo ozbiljno.</p>
+          </div>
+        </div>
+        <div class="why-feature fade-up">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div>
+            <div class="why-feature-title">Rješenja za sve tipove klijenata</div>
+            <p class="why-feature-desc">Od vlasnika kuće do investitora i industrijskih pogona — svaki projekt tretiramo jednako ozbiljno bez obzira na veličinu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="comparison">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-label">Usporedba</div>
+        <h2 class="section-title">Što dobivate<br><span>suradnjom s nama?</span></h2>
+      </div>
+      <div class="comparison-grid fade-up">
+        <div class="comp-col">
+          <div class="comp-header">
+            <div class="comp-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px" stroke="currentColor" fill="none" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+            Bez kvalitetne izvedbe
+          </div>
+          <div class="comp-list">
+            <div class="comp-item">
+              <div class="comp-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+              Loša završna obrada
+            </div>
+            <div class="comp-item">
+              <div class="comp-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+              Nepouzdani rokovi
+            </div>
+            <div class="comp-item">
+              <div class="comp-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+              Neprecizna montaža
+            </div>
+            <div class="comp-item">
+              <div class="comp-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+              Slaba ili nikakva komunikacija
+            </div>
+            <div class="comp-item">
+              <div class="comp-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+              Kratkoročna rješenja
+            </div>
+            <div class="comp-item">
+              <div class="comp-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+              Upitna sigurnost konstrukcije
+            </div>
+          </div>
+        </div>
+        <div class="comp-col good">
+          <div class="comp-header">
+            <div class="comp-icon"><svg viewBox="0 0 24 24" style="width:20px;height:20px" stroke="currentColor" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+            MetalPro Konstrukcije
+          </div>
+          <div class="comp-list">
+            <div class="comp-item">
+              <div class="comp-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Precizna izrada i kvalitetna obrada
+            </div>
+            <div class="comp-item">
+              <div class="comp-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Poštivanje dogovorenih rokova
+            </div>
+            <div class="comp-item">
+              <div class="comp-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Profesionalna montaža na terenu
+            </div>
+            <div class="comp-item">
+              <div class="comp-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Jasna ponuda i transparentna komunikacija
+            </div>
+            <div class="comp-item">
+              <div class="comp-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Dugotrajno i sigurno rješenje
+            </div>
+            <div class="comp-item">
+              <div class="comp-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              Kvalitetni materijali s jamstvom
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2 class="cta-band-title">Tražite pouzdanog<br>partnera za metalne radove?</h2>
+          <p class="cta-band-text">Javite nam se — razgovarajmo o vašem projektu i pripremimo ponudu bez obveze.</p>
+        </div>
+        <button class="btn-cta-dark" onclick="navigate('contact')">Zatraži ponudu</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page-why -->
+
+
+<!-- ═══════════════ PAGE: CONTACT ═══════════════ -->
+<div id="page-contact" class="page">
+  <title>Zatražite ponudu za metalne radove | MetalPro Konstrukcije</title>
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-hero-label">Kontakt</div>
+      <h1 class="page-hero-title">Zatražite<br><span style="color:var(--orange)">ponudu</span></h1>
+      <p class="page-hero-sub">Pošaljite nam osnovne informacije o projektu, dimenzije ili fotografiju prostora, a mi ćemo vam se javiti s prijedlogom rješenja.</p>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Info -->
+        <div class="fade-up">
+          <div class="section-label">Kontakt informacije</div>
+          <h2 class="section-title" style="font-size:2.5rem;margin-bottom:2.5rem">Gdje<br><span>smo</span></h2>
+
+          <div class="contact-info">
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Adresa</div>
+                <div class="contact-detail-value">Industrijska zona 24<br>31000 Osijek, Hrvatska</div>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.61 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Telefon</div>
+                <div class="contact-detail-value"><a href="tel:+385914826630">+385 91 482 6630</a></div>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">E-mail</div>
+                <div class="contact-detail-value"><a href="mailto:info@metalpro-konstrukcije.hr">info@metalpro-konstrukcije.hr</a></div>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <div class="contact-detail-label">Radno vrijeme</div>
+                <div class="contact-detail-value">Ponedjeljak — Petak<br>07:00 — 16:00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="map-placeholder fade-up">
+            <svg width="100%" height="100%" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" style="opacity:0.7">
+              <rect width="400" height="220" fill="#141414"/>
+              <!-- Streets grid -->
+              <line x1="0" y1="60" x2="400" y2="60" stroke="#222" stroke-width="10"/>
+              <line x1="0" y1="120" x2="400" y2="120" stroke="#222" stroke-width="8"/>
+              <line x1="0" y1="180" x2="400" y2="180" stroke="#222" stroke-width="6"/>
+              <line x1="80" y1="0" x2="80" y2="220" stroke="#222" stroke-width="8"/>
+              <line x1="200" y1="0" x2="200" y2="220" stroke="#222" stroke-width="10"/>
+              <line x1="320" y1="0" x2="320" y2="220" stroke="#222" stroke-width="6"/>
+              <!-- Street labels -->
+              <text x="95" y="55" fill="#333" font-size="9" font-family="sans-serif">Industrijska ulica</text>
+              <text x="205" y="115" fill="#333" font-size="9" font-family="sans-serif">Zona jug</text>
+              <!-- Blocks -->
+              <rect x="86" y="66" width="108" height="48" fill="#1a1a1a"/>
+              <rect x="86" y="126" width="108" height="48" fill="#1a1a1a"/>
+              <rect x="206" y="66" width="108" height="48" fill="#1a1a1a"/>
+              <!-- Location pin -->
+              <circle cx="200" cy="60" r="18" fill="rgba(232,84,10,0.25)"/>
+              <circle cx="200" cy="60" r="10" fill="#e8540a"/>
+              <circle cx="200" cy="60" r="5" fill="white"/>
+              <!-- Label -->
+              <rect x="140" y="25" width="120" height="24" rx="3" fill="rgba(232,84,10,0.9)"/>
+              <text x="150" y="41" fill="white" font-size="11" font-family="sans-serif" font-weight="bold">MetalPro Osijek</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form fade-up">
+          <div class="form-title">Zatražite ponudu za metalne radove</div>
+          <p class="form-desc">Pošaljite nam osnovne informacije i javit ćemo se brzo s prijedlogom rješenja.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Ime i prezime *</label>
+              <input type="text" class="form-input" placeholder="Vaše ime i prezime">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Naziv firme</label>
+              <input type="text" class="form-input" placeholder="Ako postoji">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">E-mail *</label>
+              <input type="email" class="form-input" placeholder="vasa@email.hr">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Telefon</label>
+              <input type="tel" class="form-input" placeholder="+385 ...">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Lokacija projekta</label>
+              <input type="text" class="form-input" placeholder="Grad, adresa ili regija">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Vrsta usluge *</label>
+              <select class="form-select">
+                <option value="" disabled selected>Odaberite uslugu</option>
+                <option>Metalna ograda</option>
+                <option>Stepenište i rukohvat</option>
+                <option>Kapija ili vrata</option>
+                <option>Nadstrešnica</option>
+                <option>Metalna konstrukcija</option>
+                <option>Čelična konstrukcija</option>
+                <option>Zavarivanje</option>
+                <option>Industrijski elementi</option>
+                <option>Izrada po nacrtu</option>
+                <option>Montaža</option>
+                <option>Ostalo / kombinacija</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Kratak opis projekta *</label>
+            <textarea class="form-textarea" rows="4" placeholder="Opišite što trebate — dimenzije, materijal, lokacija, rok, posebni zahtjevi..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Priložite fotografiju, nacrt ili dokument</label>
+            <label class="form-file">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <span class="form-file-label">Kliknite za odabir datoteke ili povucite ovdje<br><small>JPG, PNG, PDF, DWG — max 20MB</small></span>
+              <input type="file" accept=".jpg,.jpeg,.png,.pdf,.dwg">
+            </label>
+          </div>
+          <div class="form-submit-row">
+            <button class="btn btn-primary" onclick="submitForm()" style="width:100%;justify-content:center;font-size:1rem;padding:1.1rem">
+              Pošalji upit
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+          <div class="form-success" id="form-success">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <div class="form-success-text">
+              <strong>Upit je uspješno poslan!</strong><br>
+              Javit ćemo vam se u najkraćem roku, obično isti radni dan.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-contact -->
+
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <div class="logo" onclick="navigate('home')">
+            <div class="logo-icon" style="width:36px;height:36px">
+              <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="logo-text">
+              <span class="logo-name">MetalPro</span>
+              <span class="logo-tagline">Konstrukcije</span>
+            </div>
+          </div>
+        </div>
+        <p class="footer-tagline">Profesionalna bravarija, izrada metalnih elemenata i metalnih konstrukcija po mjeri za privatne, poslovne i industrijske klijente.</p>
+        <div>
+          <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Industrijska zona 24, 31000 Osijek</div>
+          <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12"/></svg><a href="tel:+385914826630">+385 91 482 6630</a></div>
+          <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:info@metalpro-konstrukcije.hr">info@metalpro-konstrukcije.hr</a></div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigacija</div>
+        <div class="footer-links">
+          <span class="footer-link" onclick="navigate('home')">Početna</span>
+          <span class="footer-link" onclick="navigate('about')">O nama</span>
+          <span class="footer-link" onclick="navigate('services')">Usluge</span>
+          <span class="footer-link" onclick="navigate('radovi')">Radovi</span>
+          <span class="footer-link" onclick="navigate('process')">Proces rada</span>
+          <span class="footer-link" onclick="navigate('why')">Zašto mi</span>
+          <span class="footer-link" onclick="navigate('contact')">Kontakt</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Usluge</div>
+        <div class="footer-services-list">
+          <div class="footer-service-item">Bravarija po mjeri</div>
+          <div class="footer-service-item">Metalne ograde</div>
+          <div class="footer-service-item">Stepeništa i rukohvati</div>
+          <div class="footer-service-item">Kapije i vrata</div>
+          <div class="footer-service-item">Nadstrešnice</div>
+          <div class="footer-service-item">Čelične konstrukcije</div>
+          <div class="footer-service-item">Zavarivanje</div>
+          <div class="footer-service-item">Montaža</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Radno vrijeme</div>
+        <p style="font-size:0.87rem;color:var(--metal);line-height:1.8">
+          Ponedjeljak — Petak<br>
+          <strong style="color:var(--white)">07:00 — 16:00</strong>
+        </p>
+        <div style="margin-top:1.5rem">
+          <div class="footer-col-title">Servisno područje</div>
+          <p style="font-size:0.87rem;color:var(--metal);line-height:1.8">
+            Osijek i Osječko-baranjska županija<br>
+            Slavonija i cijela Hrvatska<br>
+            Projekti na upit
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>MetalPro Konstrukcije d.o.o.</span> — Sva prava pridržana</p>
+      <p class="footer-copy" style="color:var(--metal)">Industrijska zona 24, 31000 Osijek, Hrvatska</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── NAVIGATION ───
+function navigate(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+  closeMobileMenu();
+
+  // Update active nav link
+  const navLinks = document.querySelectorAll('.nav-link:not(.nav-cta)');
+  const pageMap = {home:0, about:1, services:2, radovi:3, process:4, why:5};
+  if (pageMap[page] !== undefined) {
+    navLinks[pageMap[page]].classList.add('active');
+  }
+  
+  // Trigger animations for newly visible page
+  setTimeout(() => {
+    observeFadeElements();
+  }, 100);
+}
+
+// ─── HAMBURGER ───
+function toggleMenu() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+
+// ─── GALLERY FILTER ───
+function filterGallery(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  
+  const items = document.querySelectorAll('#main-gallery .gallery-item');
+  items.forEach(item => {
+    if (cat === 'sve' || item.dataset.cat === cat) {
+      item.style.display = '';
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        item.style.opacity = '1';
+        item.style.transform = 'none';
+      }, 50);
+    } else {
+      item.style.display = 'none';
+    }
+  });
+  
+  // Fix grid after filter
+  const grid = document.getElementById('main-gallery');
+  const visible = Array.from(items).filter(i => i.style.display !== 'none');
+  visible.forEach((item, idx) => {
+    item.style.gridColumn = (idx % 3 === 0) ? 'span 2' : '';
+  });
+}
+
+// ─── FORM SUBMIT ───
+function submitForm() {
+  const success = document.getElementById('form-success');
+  success.classList.add('show');
+  success.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+// ─── SCROLL ANIMATIONS ───
+function observeFadeElements() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.fade-up:not(.visible)').forEach(el => {
+    observer.observe(el);
+  });
+}
+
+// ─── STICKY HEADER SHADOW ───
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if (window.scrollY > 20) {
+    header.style.boxShadow = '0 4px 40px rgba(0,0,0,0.5)';
+  } else {
+    header.style.boxShadow = 'none';
+  }
+});
+
+// ─── INIT ───
+document.addEventListener('DOMContentLoaded', () => {
+  observeFadeElements();
+  
+  // Reobserve on page change
+  const pages = document.querySelectorAll('.page');
+  const config = { attributes: true, attributeFilter: ['class'] };
+  pages.forEach(page => {
+    new MutationObserver(() => {
+      if (page.classList.contains('active')) {
+        setTimeout(observeFadeElements, 150);
+      }
+    }).observe(page, config);
+  });
+});
+</script>
+
+</body>
+</html>
